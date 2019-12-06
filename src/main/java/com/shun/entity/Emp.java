@@ -22,6 +22,5 @@ public class Emp implements Serializable {
     private BigDecimal salary;
     private int age;
     private Date bir;
-    private String deptId;
-    private String deptName;
+    private Dept dept;
 }
