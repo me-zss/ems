@@ -38,7 +38,7 @@ public class EmpController {
     public String delete(String id) {
         Emp emp = empService.findById(id);
         empService.delete(id);
-        return "redirect:/emp/empList?deptId=" + emp.getDept().getId();
+        return "redirect:/emp/empList?deptId=" + emp.getDeptId();
     }
 
     @RequestMapping("getOne")
@@ -51,13 +51,13 @@ public class EmpController {
     @RequestMapping("update")
     public String update(Emp emp) {
         empService.update(emp);
-        return "redirect:/emp/empList?deptId=" + emp.getDept().getId();
+        return "redirect:/emp/empList?deptId=" + emp.getDeptId();
     }
 
     @RequestMapping("add")
     public String add(Emp emp) {
         empService.add(emp);
-        return "redirect:/emp/empList?deptId=" + emp.getDept().getId();
+        return "redirect:/emp/empList?deptId=" + emp.getDeptId();
 
     }
 
