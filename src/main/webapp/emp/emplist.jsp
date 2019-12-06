@@ -92,7 +92,7 @@
                         <fmt:formatDate value="${emp.bir}"/>
                     </td>
                     <td>
-                            ${emp.dept.name}
+                            ${emp.deptName}
                     </td>
                     <td>
                         <a href="javascript:void(0);" onclick="beforeDelete('${emp.id}');">delete emp</a>&nbsp;<a
@@ -105,9 +105,9 @@
         <form action="${path}/emp/empList" method="post">
             <div class="pagination">
                 <c:if test="${currentPage gt 1}">
-                    <span class="firstPage"><a href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=1"></a></span>
+                    <span class="firstPage"><a href="${path}/emp/empList?deptId=${emps[0].deptId}&page=1"></a></span>
                     <span class="previousPage"><a
-                            href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=${currentPage gt 1?currentPage-1:1}"></a></span>
+                            href="${path}/emp/empList?deptId=${emps[0].deptId}&page=${currentPage gt 1?currentPage-1:1}"></a></span>
                 </c:if>
                 <c:if test="${currentPage gt 3}">
                     <span class="pageBreak">...</span>
@@ -116,14 +116,14 @@
                     <c:forEach begin="${(currentPage-2) le 0?1:(currentPage-2)}" var="page"
                                end="${(currentPage-1) le 0?1:(currentPage-1)}">
                         <c:if test="${page ge 1}">
-                            <a href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=${page}">${page}</a>
+                            <a href="${path}/emp/empList?deptId=${emps[0].deptId}&page=${page}">${page}</a>
                         </c:if>
                     </c:forEach>
                 </c:if>
                 <span class="currentPage">${currentPage}</span>
                 <c:forEach begin="${currentPage+1}" var="page" end="${currentPage+2}">
                     <c:if test="${page le totalPage}">
-                        <a href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=${page}">${page}</a>
+                        <a href="${path}/emp/empList?deptId=${emps[0].deptId}&page=${page}">${page}</a>
                     </c:if>
                 </c:forEach>
                 <c:if test="${(currentPage+2) lt totalPage }">
@@ -134,13 +134,13 @@
                     href="javascript:$.pageSkip(3);">3</a>--%> <%--<span class="pageBreak">...</span>--%>
                 <c:if test="${currentPage lt totalPage}">
                     <a class="nextPage"
-                       href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=${currentPage lt totalPage?currentPage+1:totalPage}">&nbsp;</a>
+                       href="${path}/emp/empList?deptId=${emps[0].deptId}&page=${currentPage lt totalPage?currentPage+1:totalPage}">&nbsp;</a>
                     <a class="lastPage"
-                       href="${path}/emp/empList?deptId=${emps[0].dept.id}&page=${totalPage}">&nbsp;</a>
+                       href="${path}/emp/empList?deptId=${emps[0].deptId}&page=${totalPage}">&nbsp;</a>
                 </c:if>
 
 
-                <input name="deptId" value="${emps[0].dept.id}" hidden/>
+                <input name="deptId" value="${emps[0].deptId}" hidden/>
                 <span class="pageSkip"> 共${totalPage}页 到第<input id="pageNumber"
                                                                 name="page" value="${currentPage}"
                                                                 maxlength="${totalPage}"

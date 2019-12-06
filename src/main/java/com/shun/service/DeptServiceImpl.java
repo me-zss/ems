@@ -33,7 +33,7 @@ public class DeptServiceImpl implements DeptService {
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public Dept findById(String id) {
-        return (Dept) deptDao.selectByPrimaryKey(new Dept().setId(id));
+        return deptDao.selectByPrimaryKey(new Dept().setId(id));
     }
 
     @Override

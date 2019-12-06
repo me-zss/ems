@@ -51,8 +51,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean register(User user) {
-        if (user == null || user.getUsername() == null || user.getPassword() == null || user.getUsername().isEmpty() || user.getPassword().isEmpty())
+        if (user == null || user.getUsername() == null || user.getPassword() == null || user.getUsername().isEmpty() || user.getPassword().isEmpty()) {
             return false;
+        }
         user.setId(UUID.randomUUID().toString().replace("-", ""))
                 .setSalt(UUID.randomUUID().toString().replace("-", ""));
         user.setPassword(Md5Util.toMD5(user.getPassword(), user.getSalt()));
