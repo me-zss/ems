@@ -7,6 +7,9 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+/**
+ * @author shun
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

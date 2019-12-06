@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author shun
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
