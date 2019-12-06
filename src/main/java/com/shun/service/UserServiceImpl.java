@@ -29,14 +29,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
+        user.setId(UUID.randomUUID().toString());
         userDao.insertSelective(user);
     }
 
     @Override
     public User login(User user) {
-        if (user == null) return null;
+        if (user == null) {
+            return null;
+        }
         User reUser = findByUsername(user.getUsername());
-        if (reUser == null) return null;
+        if (reUser == null) {
+            return null;
+        }
         if (Md5Util.verify(reUser.getPassword(), reUser.getSalt(), user.getPassword())) {
             return reUser;
         } else {
