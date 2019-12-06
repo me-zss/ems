@@ -1,0 +1,12 @@
+server:
+  port: 1208
+  servlet:
+    context-path: /ems
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
