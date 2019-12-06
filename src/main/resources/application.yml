@@ -21,3 +21,6 @@ spring:
 mybatis:
   type-aliases-package: com.shun.entity
   mapper-locations: classpath:com/shun/mapper/*Mapper.xml
+logging:
+  level:
+    com.shun.dao: debug
